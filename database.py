@@ -8,7 +8,7 @@ print(feedback_list)
 print("\n")
 
 # Checking Subscription Manager Works 
-subscriptions = smSL.load_subscriptions("Subscription_Info.txt")
+subscriptions = smSL.load_subscriptions()
 print(smSL.check_subscription("lbro", subscriptions)) # Should return True or False based on the current date 
 print(smSL.get_rental_limit("Basic")) # Should return 2
 print(smSL.get_rental_limit("Premium")) # Should return 7
