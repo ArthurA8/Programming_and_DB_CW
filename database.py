@@ -40,3 +40,5 @@ def sub_type(user_id):
     elif user_info['SubscriptionType'] == 'Basic':
         return 'Basic'
 
+
+

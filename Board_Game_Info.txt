@@ -1,3 +1,11 @@
-CustomerID,SubscriptionType,StartDate,EndDate
-abcd,Basic,2021-11-15,2026-01-01
-lbro,Premium,2022-07-09,2026-07-09
+GameID,Name,No.Players,Genre,PurchaseDate
+mon01,Monopoly,2-8,Strategy,2025-11-15
+sna02,SnakesAndLadders,2-6,Race,2025-11-15
+che03,Chess,2,Strategy,2025-11-15
+ris04,Risk,2-6,Strategy,2025-11-15
+cat05,Catan,3-4,Eurogame,2025-11-15
+scr06,Scrabble,2-4,Wordgame,2025-11-15
+clu07,Cluedo,2-6,Mystery,2025-11-15
+gue08,GuessWho,2,Deduction,2025-11-15
+bac09,Backgammon,2,Strategy,2025-11-15
+dom10,Dominion,2-4,deckbuilder,2025-11-15

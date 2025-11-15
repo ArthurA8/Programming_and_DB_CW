@@ -1,0 +1,11 @@
+GameID,Name,Platform,Genre,PurchaseDate
+min01,Minecraft,PlayStation,Survival,2025-11-15
+rus02,Rust,Desktop,Survival,2025-11-15
+ska03,Skate4,Xbox,Sports,2025-11-15
+mad04,MaddenNFL25,PlayStation,Sports,2025-11-15
+eld05,EldenRing,Desktop,RPG,2025-11-15
+mar06,MarioKartWorld,NintendoSwitch2,Racing,2025-11-15
+gta07,GTAV,XBOX,Adventure,2025-11-15
+spl08,SplitFiction,XBOX,Adventure,2025-11-15
+doo09,Doom,Desktop,FPS,2025-11-15
+cou10,CounterStrike2,Desktop,FPS,2025-11-15
