@@ -23,12 +23,12 @@ subscriptions = smSL.load_subscriptions()
 def is_subscribed(user_id):
     return smSL.check_subscription(f"{user_id}", subscriptions)
 
+
 # Access subscriptions as a dictionary 
 
 def subscriptions(): 
     return smSL.load_subscriptions()
 
-print(subscriptions())
 
 # Check subscription type:
 
@@ -39,6 +39,30 @@ def sub_type(user_id):
         return 'Premiun'
     elif user_info['SubscriptionType'] == 'Basic':
         return 'Basic'
+    
+# Returns rental limit:
+
+def rental_lim(user_id):
+    if sub_type(user_id) == 'Premium':
+        return 7 
+    elif sub_type(user_id) == 'Basic':
+        return 2 
+
+# Removes game from respective txt DB 
+
+def remove_game(game_id, db_name):
+    with open(f'{db_name}', 'r') as r:
+        file_lst = r.readlines()[1:]
+        with open(f'{db_name}', 'w') as w:
+            w.write('GameID,Name,Platform,Genre,PurchaseDate\n')
+            for line in file_lst:
+                id = line.split(",")[0]
+                if game_id != id: 
+                    w.write(line)
+
+
+                    
+
 
 
 

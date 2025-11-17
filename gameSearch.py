@@ -56,15 +56,12 @@ def board_genre(search_genre):
         if genre == search_genre: 
             print(name)
 
-# Prints video game of specific name and genre
 
-def vid_name_genre(name, search_genre):
-    pass 
 
-# Prints video game of specific name and genre: 
 
-def board_name_genre(name, search_genre): 
-    pass
+
+
+
 
 
 
