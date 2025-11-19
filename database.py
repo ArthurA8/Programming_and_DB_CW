@@ -12,7 +12,6 @@ feedback_list = fmSL.load_feedback()
 #print("\n")
 
 # 2. Checking Subscription Manager Works 
-subscriptions = smSL.load_subscriptions()
 #print(smSL.check_subscription("lbro", subscriptions)) # Should return True or False based on the current date 
 #print(smSL.get_rental_limit("Basic")) # Should return 2
 #print(smSL.get_rental_limit("Premium")) # Should return 7
@@ -21,8 +20,9 @@ subscriptions = smSL.load_subscriptions()
 # Use to check for a subscription 
 
 def is_subscribed(user_id):
-    return smSL.check_subscription(f"{user_id}", subscriptions)
-
+    subscriptions = smSL.load_subscriptions()
+    subscribed = smSL.check_subscription(user_id, subscriptions)
+    return subscribed
 
 # Access subscriptions as a dictionary 
 
@@ -36,11 +36,11 @@ def sub_type(user_id):
     sub_dict = smSL.load_subscriptions()
     user_info = sub_dict[f'{user_id}']
     if user_info['SubscriptionType'] == 'Premium':
-        return 'Premiun'
+        return 'Premium'
     elif user_info['SubscriptionType'] == 'Basic':
         return 'Basic'
     
-# Returns rental limit:
+# Returns rental time limit:
 
 def rental_lim(user_id):
     if sub_type(user_id) == 'Premium':
