@@ -55,6 +55,7 @@ def game_Rent(user_ID, game_ID, rental_Date):
         print("Failed to rent! Customer is not subscribed!")
 
 game_Rent('abcd', 'sna02', '2025-11-19')
+game_Rent('abcd', 'min01', '2025-11-19')
 
 
 
