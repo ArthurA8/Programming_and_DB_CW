@@ -40,6 +40,12 @@ def game_Return(game_ID, user_ID):
 
                 print(f"Game successfully returned!\nRental Date: {rental_date}\nReturn Date: {current_date}\n")
 
+                concat_latest_date = int(latest_date.replace("-", ""))
+                concat_return_date = int(current_date.replace("-", ""))
+                
+                if concat_return_date > concat_latest_date: 
+                    print(f"Customer has returned the game late!\nReturn Date: {current_date}\nLatest Return Date: {latest_date}")
+
             else: 
                 w.write(line)
     
@@ -51,9 +57,7 @@ def game_Return(game_ID, user_ID):
                  
 
 game_Return('sna02', 'abcd')
-game_Return('min01','abcd')
 
 
-# Create functionality to return a message if the game was retuned late 
 # Create functionality to allow for the user to input a star rating upon return to Game_Feedback.txt
 # Create functionality to allow for the user to write a review to Game_Feedback.txt
