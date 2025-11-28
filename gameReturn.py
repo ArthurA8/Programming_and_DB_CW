@@ -10,18 +10,28 @@ from datetime import datetime
 
 def game_Return(game_ID, user_ID):
 
+    # Creating a list containing Rental.txt entries: 
+
     r = open("Rental.txt", "r")
     file_lst = r.readlines()[1:]
     r.close()
 
+    # Fetching and formatting current date for return date:
+
     current_date = datetime.now().strftime("%Y-%m-%d")
+
+    # Creating a list containing Return history for the specified game:
 
     game_return_history = []
     for line in file_lst:
         if line.split(",")[0] == game_ID:
             game_return_history.append(line.split(",")[2])
+
+    # Checking to see if the game was out for return:
     
     if "N/A" in game_return_history:
+
+        # Rewriting Rental.txt to fill return date entry:
 
         w = open("Rental.txt", "w")
 
@@ -42,6 +52,8 @@ def game_Return(game_ID, user_ID):
 
                 concat_latest_date = int(latest_date.replace("-", ""))
                 concat_return_date = int(current_date.replace("-", ""))
+
+                # Once returned, checking to see if the game was returned late:
                 
                 if concat_return_date > concat_latest_date: 
                     print(f"Customer has returned the game late!\nReturn Date: {current_date}\nLatest Return Date: {latest_date}")
@@ -50,6 +62,20 @@ def game_Return(game_ID, user_ID):
                 w.write(line)
     
         w.close()
+
+        # Adding rating and comment to Game_Feedback.txt upon return:
+
+        # Use radio buttons or something in the GUI to ensure only 1-5 can be inputted
+        rating = int(input("Please enter a star rating 1-5: "))
+        comments = str(input("Please enter a short comment on the game: "))
+
+        w = open("Game_Feedback.txt", "a")
+        w.write(f'{game_ID},{rating},{comments}')
+
+        print("Rating and comment submitted!")
+
+        w.close()
+
     
     else: 
         print("Game is not out for return!")
@@ -59,5 +85,4 @@ def game_Return(game_ID, user_ID):
 game_Return('sna02', 'abcd')
 
 
-# Create functionality to allow for the user to input a star rating upon return to Game_Feedback.txt
-# Create functionality to allow for the user to write a review to Game_Feedback.txt
+
