@@ -70,7 +70,7 @@ def game_Return(game_ID, user_ID):
         comments = str(input("Please enter a short comment on the game: "))
 
         w = open("Game_Feedback.txt", "a")
-        w.write(f'{game_ID},{rating},{comments}')
+        w.write(f'\n{game_ID},{rating},{comments}')
 
         print("Rating and comment submitted!")
 
