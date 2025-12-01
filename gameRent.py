@@ -16,7 +16,7 @@ from gameSearch import search_Vid, search_Board
 
 # Allows user to rent game (if avaliable) and adds it to Rental.txt
 
-def game_Rent(user_ID, game_ID, rental_Date):
+def game_Rent(user_ID, game_ID):
     
     
     if is_subscribed(user_ID):
@@ -24,6 +24,7 @@ def game_Rent(user_ID, game_ID, rental_Date):
         if search_Vid(game_ID) or search_Board(game_ID):
 
             rent_db = open('Rental.txt', 'r')
+            rental_Date = datetime.now().strftime("%Y-%m-%d")
 
             rent_lim = rental_lim(user_ID)
             year = int(rental_Date.replace('-', ' ').split()[0])
@@ -54,7 +55,7 @@ def game_Rent(user_ID, game_ID, rental_Date):
     else: 
         print("Failed to rent! Customer is not subscribed!")
 
-game_Rent('abcd', 'sna02', '2024-11-19')
+game_Rent('abcd', 'sna02') 
 
 
 

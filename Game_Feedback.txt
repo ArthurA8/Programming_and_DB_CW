@@ -7,3 +7,4 @@ fifa02,5,Absolutely amazing!
 dft01,4,Not bad
 sna02,4,fun but repetitive
 sna02,5,A classic!
+sna02,4,Kinda boring
