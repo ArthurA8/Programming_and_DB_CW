@@ -55,7 +55,83 @@ def game_Rent(user_ID, game_ID):
     else: 
         print("Failed to rent! Customer is not subscribed!")
 
-game_Rent('abcd', 'sna02') 
+#game_Rent('abcd', 'min01') 
+#('lbro', 'ska03')
+#game_Rent('lbro', 'sna02')
+
+
+
+# Allows store manager to see what Video games are avaliable for rent
+
+def avaliable_vid_games(): 
+
+    r = open("Rental.txt", "r")
+
+    unavaliable = []
+    avaliable = []
+
+    for line in r.readlines()[1:]:
+        if line.split(",")[2] == "N/A":
+            unavaliable.append(line)
+
+    r.close()
+
+    r = open("Video_Game_Info.txt", "r")
+
+    for line in r.readlines()[1:]:
+        line.replace('\n', '')
+        line = line.split(",")
+        line.pop(4)
+        line = ','.join(line)
+        avaliable.append(line)
+
+    for entry in unavaliable:
+        for line in avaliable:
+            if entry.split(",")[0] == line.split(",")[0]:
+                avaliable.remove(line)
+    
+    for entry in avaliable:
+        print(entry)
+
+
+avaliable_vid_games()
+
+
+# Allows store manager to see what Board games are avaliable for rent 
+
+def avaliable_board_games(): 
+
+    r = open("Rental.txt", "r")
+
+    unavaliable = []
+    avaliable = []
+
+    for line in r.readlines()[1:]:
+        if line.split(",")[2] == "N/A":
+            unavaliable.append(line)
+
+    r.close()
+
+    r = open("Board_Game_Info.txt", "r")
+
+    for line in r.readlines()[1:]:
+        line.replace('\n', '')
+        line = line.split(",")
+        line.pop(4)
+        line = ','.join(line)
+        avaliable.append(line)
+
+    for entry in unavaliable:
+        for line in avaliable:
+            if entry.split(",")[0] == line.split(",")[0]:
+                avaliable.remove(line)
+    
+    for entry in avaliable:
+        print(entry)
+
+avaliable_board_games()            
+    
+    
 
 
 
