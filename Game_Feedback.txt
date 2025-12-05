@@ -8,3 +8,11 @@ dft01,4,Not bad
 sna02,4,fun but repetitive
 sna02,5,A classic!
 sna02,4,Kinda boring
+ris04,5,very addictive 
+ris04,5,great game
+sna02,3,gets boring fast
+ris04,4,kinda mid
+ris04,4,ok
+ris04,5,amazing
+min01,5,GOAT game
+clu07,5,very fun

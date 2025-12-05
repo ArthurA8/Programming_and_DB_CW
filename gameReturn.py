@@ -8,6 +8,7 @@ from datetime import datetime
 
 # Allows a user who rented a game to return it 
 
+
 def game_Return(game_ID, user_ID):
 
     # Creating a list containing Rental.txt entries: 
@@ -45,7 +46,8 @@ def game_Return(game_ID, user_ID):
             user_id = line.split(",")[3]
             latest_date = line.split(",")[4]
 
-            if line.split(",")[0] == game_ID and line.split(",")[3] == user_ID and line.split(",")[2] == "N/A":
+            if all([game_id == game_ID, user_id == user_ID, return_date == "N/A"]):
+
                 w.write(f"{game_id},{rental_date},{current_date},{user_id},{latest_date}")
 
                 print(f"Game successfully returned!\nRental Date: {rental_date}\nReturn Date: {current_date}\n")
@@ -82,7 +84,6 @@ def game_Return(game_ID, user_ID):
     
                  
 
-game_Return('sna02', 'abcd')
-
+game_Return('clu07', 'abcd')
 
 

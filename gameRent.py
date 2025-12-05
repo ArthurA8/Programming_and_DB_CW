@@ -56,7 +56,7 @@ def game_Rent(user_ID, game_ID):
         print("Failed to rent! Customer is not subscribed!")
 
 #game_Rent('abcd', 'min01') 
-#('lbro', 'ska03')
+#game_Rent('lbro', 'ris04')
 #game_Rent('lbro', 'sna02')
 
 
@@ -90,11 +90,10 @@ def avaliable_vid_games():
             if entry.split(",")[0] == line.split(",")[0]:
                 avaliable.remove(line)
     
-    for entry in avaliable:
-        print(entry)
+    #print(avaliable)
 
 
-avaliable_vid_games()
+#avaliable_vid_games()
 
 
 # Allows store manager to see what Board games are avaliable for rent 
@@ -126,14 +125,6 @@ def avaliable_board_games():
             if entry.split(",")[0] == line.split(",")[0]:
                 avaliable.remove(line)
     
-    for entry in avaliable:
-        print(entry)
+    print(avaliable)
 
-avaliable_board_games()            
-    
-    
-
-
-
-
-    
+#avaliable_board_games()              
