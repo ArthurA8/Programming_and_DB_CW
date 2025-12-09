@@ -8,4 +8,4 @@ scr06,Scrabble,2-4,Wordgame,2025-11-15
 clu07,Cluedo,2-6,Mystery,2025-11-15
 gue08,GuessWho,2,Deduction,2025-11-15
 bac09,Backgammon,2,Strategy,2025-11-15
-dom10,Dominion,2-4,deckbuilder,2025-11-15
+dom10,Dominion,2-4,Deckbuilder,2025-11-15
