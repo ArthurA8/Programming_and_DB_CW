@@ -16,3 +16,6 @@ ris04,4,ok
 ris04,5,amazing
 min01,5,GOAT game
 clu07,5,very fun
+gue08,5,Great game
+scr06,4,Thinkers game
+doo09,5,A classic!
