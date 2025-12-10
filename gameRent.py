@@ -55,10 +55,6 @@ def game_Rent(user_ID, game_ID):
     else: 
         print("Failed to rent! Customer is not subscribed!")
 
-#game_Rent('abcd', 'min01') 
-#game_Rent('lbro', 'ris04')
-#game_Rent('lbro', 'sna02')
-
 
 
 # Allows store manager to see what Video games are avaliable for rent
