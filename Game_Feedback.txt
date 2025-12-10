@@ -20,3 +20,5 @@ gue08,5,Great game
 scr06,4,Thinkers game
 doo09,5,A classic!
 che03,5,Classic
+bac09,4,fun
+che03,5,so much fun
