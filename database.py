@@ -29,7 +29,6 @@ def is_subscribed(user_id):
 def subscriptions(): 
     return smSL.load_subscriptions()
 
-
 # Check subscription type:
 
 def sub_type(user_id): 
