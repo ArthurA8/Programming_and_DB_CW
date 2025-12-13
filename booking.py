@@ -34,15 +34,35 @@ def booking(user_ID, date, time_slot, No_Guests):
     logs = r.readlines()[1:]
     r.close()
 
-    for line in logs: 
-        if line[0] == user_ID and line[1] == date and line[2] == time_slot: 
-            return "already booked"
-    
-    a = open("Booking.txt", "a")
+    if str(time_slot) == "2-6 pm":
 
-    a.write(f"\n{user_ID},{date},{time_slot},{No_Guests}")
-    a.close()
-    return "success"
+        for line in logs: 
+
+            print(line)
+
+            if line.split(",")[0] == user_ID and line.split(",")[1] == date and line.split(",")[2] == "2pm": 
+                return "already booked"
+        
+        a = open("Booking.txt", "a")
+
+        a.write(f"\n{user_ID},{date},2pm,{No_Guests}")
+        a.close()
+        return "success"
+    
+    elif str(time_slot) == "6-10 pm":
+
+        for line in logs: 
+
+            print(line)
+
+            if line.split(",")[0] == user_ID and line.split(",")[1] == date and line.split(",")[2] == "6pm": 
+                return "already booked"
+        
+        a = open("Booking.txt", "a")
+
+        a.write(f"\n{user_ID},{date},6pm,{No_Guests}")
+        a.close()
+        return "success"
 
 
 # Function which checks if inputted date is within 1 week of current date:
