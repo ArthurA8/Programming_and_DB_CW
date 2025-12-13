@@ -39,8 +39,10 @@ def booking(user_ID, date, time_slot, No_Guests):
             return "already booked"
     
     a = open("Booking.txt", "a")
-    a.append({user_ID},{date},{time_slot},{No_Guests})
+
+    a.write(f"\n{user_ID},{date},{time_slot},{No_Guests}")
     a.close()
+    return "success"
 
 
 # Function which checks if inputted date is within 1 week of current date:
