@@ -1,11 +1,13 @@
 import subscriptionManager as smSL
 import feedbackManager as fmSL
+import matplotlib.pyplot as plt
 
 feedback_list = fmSL.load_feedback()
 
-# Returns list of IDs of least rented games
 
-def least_rented():
+# Returns a dictionary of games and their rental frequency
+
+def all_rentings():
 
     r = open("Rental.txt", "r")
 
@@ -42,12 +44,24 @@ def least_rented():
     
     r.close()
 
+    return(freq_dict)
+
+
+
+
+# Returns list of IDs of least rented games
+
+def least_rented():
+
+    freq_dict = all_rentings()
+
     unpopular = []
     for game in freq_dict.items():
         if game[1] == min(freq_dict.values()):
             unpopular.append(game[0])
 
     return unpopular
+
 
 
 
@@ -90,5 +104,34 @@ def worst_rating():
     return worst_rated
     
 
-worst_rating()
+
+# Function to find name of a game from its ID
+
+def id_to_name(id):
     
+    v = open("Video_Game_Info.txt", "r")
+    b = open("Board_Game_Info.txt", "r")
+
+    game_names = []
+
+    for line in v.readlines()[1:]:
+        game_id = line.split(",")[0]
+        game_name = line.split(",")[1]
+        game_names.append((game_id, game_name))
+    
+    for line in b.readlines()[1:]:
+        game_id = line.split(",")[0]
+        game_name = line.split(",")[1]
+        game_names.append((game_id, game_name))
+    
+    v.close()
+    b.close()
+
+    for entry in game_names:
+        if entry[0] == id:
+            return entry[1]
+
+
+
+# Defining the Scatter Plot to show analytics 
+

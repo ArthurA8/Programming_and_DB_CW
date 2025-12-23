@@ -1,10 +1,4 @@
 GameID,Rating,Comments
-Art01,4,Hilarious!
-bac02,2,Not exciting
-chs03,5,My favourite game of all time
-fifa02,5,Absolutely amazing!
-fifa02,5,Absolutely amazing!
-dft01,4,Not bad
 sna02,4,fun but repetitive
 sna02,5,A classic!
 sna02,4,Kinda boring
@@ -22,3 +16,4 @@ doo09,5,A classic!
 che03,5,Classic
 bac09,4,fun
 che03,5,so much fun
+ska03,5,Best Game
