@@ -68,13 +68,27 @@ def worst_rating():
         for review in feedback_list:
             if review['GameID'] == game[0]:
                 game[1].append(review['Rating'])
-    
-    print(rated_games)
 
+    mean_ratings = {}           
+    
+    for game in rated_games:
 
+        summed = 0
+        for rating in game[1]:
+            summed += rating 
+
+        mean = summed / len(game[1])
+
+        mean_ratings[game[0]] = mean
+
+    worst_rated = []
+
+    for game in mean_ratings.items():
+        if game[1] == min(mean_ratings.values()):
+            worst_rated.append(game)
+    
+    return worst_rated
     
 
-    
-    
 worst_rating()
     
