@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 feedback_list = fmSL.load_feedback()
 
 
+
+
 # Returns a dictionary of games and their rental frequency
 
 def all_rentings():
@@ -49,26 +51,9 @@ def all_rentings():
 
 
 
-# Returns list of IDs of least rented games
+# Returns a dictionary of games and their mean rating 
 
-def least_rented():
-
-    freq_dict = all_rentings()
-
-    unpopular = []
-    for game in freq_dict.items():
-        if game[1] == min(freq_dict.values()):
-            unpopular.append(game[0])
-
-    return unpopular
-
-
-
-
-# Returns game with lowest Rating 
-
-def worst_rating():
-
+def average_ratings():
     rated_games = []
 
     for game in feedback_list:
@@ -94,6 +79,33 @@ def worst_rating():
         mean = summed / len(game[1])
 
         mean_ratings[game[0]] = mean
+    
+    return mean_ratings
+
+
+
+
+# Returns list of IDs of least rented games
+
+def least_rented():
+
+    freq_dict = all_rentings()
+
+    unpopular = []
+    for game in freq_dict.items():
+        if game[1] == min(freq_dict.values()):
+            unpopular.append(game[0])
+
+    return unpopular
+
+
+
+
+# Returns game with lowest Rating 
+
+def worst_rating():
+
+    mean_ratings = average_ratings()
 
     worst_rated = []
 
@@ -102,7 +114,8 @@ def worst_rating():
             worst_rated.append(game)
     
     return worst_rated
-    
+   
+
 
 
 # Function to find name of a game from its ID
@@ -133,5 +146,23 @@ def id_to_name(id):
 
 
 
-# Defining the Scatter Plot to show analytics 
 
+# Defining the Scatter Plot to show trend between rating & rental freq
+
+freq_axis = []
+
+for freq in all_rentings().values():
+    if freq  != 0:
+        freq_axis.append(freq)
+
+print(freq_axis)
+
+rating_axis = []
+
+for rating in average_ratings().values():
+    rating_axis.append(rating)
+
+print(rating_axis)
+
+plt.scatter(freq_axis, rating_axis)
+plt.show()

@@ -1,19 +1,4 @@
 GameID,Rating,Comments
-sna02,4,fun but repetitive
-sna02,5,A classic!
-sna02,4,Kinda boring
-ris04,5,very addictive 
-ris04,5,great game
-sna02,3,gets boring fast
-ris04,4,kinda mid
-ris04,4,ok
-ris04,5,amazing
-min01,5,GOAT game
-clu07,5,very fun
-gue08,5,Great game
-scr06,4,Thinkers game
-doo09,5,A classic!
-che03,5,Classic
-bac09,4,fun
-che03,5,so much fun
-ska03,5,Best Game
+mon01,5,Great
+ris04,5,Great
+doo09,4,fine
