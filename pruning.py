@@ -100,7 +100,6 @@ def least_rented():
 
 
 
-
 # Returns game with lowest Rating 
 
 def worst_rating():
@@ -115,7 +114,6 @@ def worst_rating():
     
     return worst_rated
    
-
 
 
 # Function to find name of a game from its ID
@@ -147,22 +145,17 @@ def id_to_name(id):
 
 
 
-# Defining the Scatter Plot to show trend between rating & rental freq
+# Defining Bar Chart to show Rental Frequencies
 
-freq_axis = []
+def freq_plot():
 
-for freq in all_rentings().values():
-    if freq  != 0:
-        freq_axis.append(freq)
+    fig, ax = plt.subplots(figsize=(6, 3))
 
-print(freq_axis)
+    x = all_rentings().keys() 
+    y = all_rentings().values()
 
-rating_axis = []
-
-for rating in average_ratings().values():
-    rating_axis.append(rating)
-
-print(rating_axis)
-
-plt.scatter(freq_axis, rating_axis)
-plt.show()
+    plt.barh(x,y)
+    ax.set_xlim(0, 15)
+    plt.ylabel("Game ID")
+    plt.xlabel("Rental Freq")
+    plt.show()
