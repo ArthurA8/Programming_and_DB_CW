@@ -44,9 +44,8 @@ def game_Rent(user_ID, game_ID):
             else: 
                 rent_db.close()
                 write_db = open('Rental.txt', 'a')
-                entry = f"{game_ID},{rental_Date},N/A,{user_ID},{latest_return_Date}"
+                entry = f"\n{game_ID},{rental_Date},N/A,{user_ID},{latest_return_Date}"
                 write_db.write(entry)
-                write_db.write("\n")
                 print(f"Game rented successfully! Latest return date: {latest_return_Date}")
             
         else: 

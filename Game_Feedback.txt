@@ -1,4 +1,7 @@
 GameID,Rating,Comments
-mon01,5,Great
-ris04,5,Great
-doo09,4,fine
+scr06,5,Great
+mad04,5,Great
+eld05,5,Great
+cat05,4,Solid
+rus02,3,Addictive
+doo09,5,Classic
