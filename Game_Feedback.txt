@@ -5,3 +5,4 @@ eld05,5,Great
 cat05,4,Solid
 rus02,3,Addictive
 doo09,5,Classic
+scr06,5,Great

@@ -82,7 +82,7 @@ def average_ratings():
     
     return mean_ratings
 
-
+print(average_ratings())
 
 
 # Returns list of IDs of least rented games
@@ -145,17 +145,37 @@ def id_to_name(id):
 
 
 
-# Defining Bar Chart to show Rental Frequencies
+# Defining Bar Chart analytics
 
-def freq_plot():
+def plot(type):
 
-    fig, ax = plt.subplots(figsize=(6, 3))
+    with analytics_output:
 
-    x = all_rentings().keys() 
-    y = all_rentings().values()
+        if type == "frequency":
 
-    plt.barh(x,y)
-    ax.set_xlim(0, 15)
-    plt.ylabel("Game ID")
-    plt.xlabel("Rental Freq")
-    plt.show()
+            plt.close('all')
+            x = all_rentings().keys() 
+            y = all_rentings().values()
+            plt.figure(figsize=(4, 3))
+            plt.bar(x, y)
+            plt.xlabel("Game ID")
+            plt.ylabel("Rental Freq")
+            plt.ylim(0, 10)
+            plt.xticks(rotation=45)
+            plt.tight_layout()
+            plt.show()
+    
+        if type == "rating":
+
+            plt.close('all')
+            x = average_ratings().keys()
+            y = average_ratings().values()
+            plt.figure(figsize=(4, 3))
+            plt.bar(x, y)
+            plt.xlabel("Game ID")
+            plt.ylabel("Mean Rating")
+            plt.ylim(0, 5)
+            plt.xticks(rotation=45)
+            plt.tight_layout()
+            plt.show()
+
