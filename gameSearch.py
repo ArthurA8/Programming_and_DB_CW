@@ -34,6 +34,8 @@ def vid_Games():
         print(name)
     v.close()
 
+vid_Games()
+
 # Prints all board games 
 
 def board_Games():
