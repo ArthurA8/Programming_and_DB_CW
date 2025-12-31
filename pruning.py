@@ -82,7 +82,6 @@ def average_ratings():
     
     return mean_ratings
 
-print(average_ratings())
 
 
 # Returns list of IDs of least rented games
@@ -151,31 +150,58 @@ def plot(type):
 
     with analytics_output:
 
+        game_ids = []
+
+        r = open("Video_Game_Info.txt", "r")
+        for line in r.readlines()[1:]:
+            game_id = line.split(",")[0]
+            game_ids.append(game_id)
+        r.close()
+
+        r = open("Board_Game_Info.txt", "r")
+        for line in r.readlines()[1:]:
+            game_id = line.split(",")[0]
+            game_ids.append(game_id)
+        r.close()
+
         if type == "frequency":
 
-            plt.close('all')
-            x = all_rentings().keys() 
-            y = all_rentings().values()
-            plt.figure(figsize=(4, 3))
-            plt.bar(x, y)
-            plt.xlabel("Game ID")
-            plt.ylabel("Rental Freq")
-            plt.ylim(0, 10)
-            plt.xticks(rotation=45)
-            plt.tight_layout()
-            plt.show()
-    
+                plt.close('all')
+                x = []
+                y = []
+
+                for entry in all_rentings().items():
+                    if entry[0] in game_ids:
+                        x.append(entry[0])
+                        y.append(entry[1])
+
+                plt.figure(figsize=(4, 3))
+                plt.bar(x, y)
+                plt.xlabel("Game ID")
+                plt.ylabel("Rental Freq")
+                plt.ylim(0, 10)
+                plt.xticks(rotation=45)
+                plt.tight_layout()
+                plt.show()
+
+
         if type == "rating":
 
-            plt.close('all')
-            x = average_ratings().keys()
-            y = average_ratings().values()
-            plt.figure(figsize=(4, 3))
-            plt.bar(x, y)
-            plt.xlabel("Game ID")
-            plt.ylabel("Mean Rating")
-            plt.ylim(0, 5)
-            plt.xticks(rotation=45)
-            plt.tight_layout()
-            plt.show()
+                plt.close('all')
+                x = []
+                y = []
+
+                for entry in average_ratings().items():
+                    if entry[0] in game_ids:
+                        x.append(entry[0])
+                        y.append(entry[1])
+
+                plt.figure(figsize=(4, 3))
+                plt.bar(x, y)
+                plt.xlabel("Game ID")
+                plt.ylabel("Mean Rating")
+                plt.ylim(0, 5)
+                plt.xticks(rotation=45)
+                plt.tight_layout()
+                plt.show()
 
