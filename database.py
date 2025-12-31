@@ -58,6 +58,8 @@ def remove_game(game_id, db_name):
                 id = line.split(",")[0]
                 if game_id != id: 
                     w.write(line)
+    r.close()
+    w.close()
 
 
                     
