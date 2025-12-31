@@ -14,17 +14,14 @@ def avaliability(date, time_slot):
 
     slot_data = []
     for line in r.readlines()[1:]:
-        if line[1] == selected_date and line[2] == time_slot:
-            slot_data.append(int(line[3]) + 1)
+        if line.split(",")[1] == selected_date and line.split(",")[2] == time_slot:
+            slot_data.append(int(line.split(",")[3]) + 1)
         
     num_ppl = sum(slot_data)
+    r.close()
 
     return (num_ppl, 50 - num_ppl)
  
-    r.close()
-        
-
-    
 
 # Function adding new entry to Booking.txt 
 
